@@ -34,7 +34,7 @@ WORKDIR /home
 
 RUN yum -y update && \
     yum -y install centos-release-SCL && \
-    curl -skL -O "http://ftp.scientificlinux.org/linux/scientific/5x/x86_64/RPM-GPG-KEYs/RPM-GPG-KEY-cern" && \
+    wget -O /etc/pki/rpm-gpg/RPM-GPG-KEY-cern "http://ftp.scientificlinux.org/linux/scientific/5x/x86_64/RPM-GPG-KEYs/RPM-GPG-KEY-cern" && \
     wget -O /etc/yum.repos.d/slc6-devtoolset.repo http://linuxsoft.cern.ch/cern/devtoolset/slc6-devtoolset.repo && \
     yum -y install devtoolset-2 && \
     yum clean all
